@@ -21,7 +21,7 @@ local url_data = {
                 "AMC",
                 "^XAU"
             },
-            Commodities = {
+            commodities = {
                 "LBR=F",
                 "OJ=F",
                 "CT=F"
