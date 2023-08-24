@@ -51,5 +51,18 @@ local url_data = {
             }
         },
         url_ending = "?interval=1d"
+    },
+    pokemon = {
+        base_url = "https://api.pokemontcg.io/v2/cards?q=name:"
+        pokemons = {
+            "charizard",
+            "pikachu",
+            "mew",
+            "bulbasaur",
+            "squirtle",
+            "mewtwo",
+            "magikarp",
+            "lugia"
+        }
     }
 }
