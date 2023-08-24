@@ -16,7 +16,10 @@ local url_data = {
                 "BB",
                 "IBM",
                 "GME",
-                "^OMX"
+                "^OMX",
+                "MC.PA",
+                "AMC",
+                "^XAU"
             },
             Commodities = {
                 "LBR=F",
@@ -26,6 +29,8 @@ local url_data = {
             crypto = {
                 "BTC-USD",
                 "ETH-USD",
+                "BNB-USD",
+                "XRP-USD",
                 "ADA-USD",
                 "DOGE-USD",
                 "SHIB-USD",
