@@ -64,5 +64,12 @@ local url_data = {
             "magikarp",
             "lugia"
         }
-    }
+    },
+    --stockx = {
+        --base_url = "https://api.stockx.com/v2/catalog/products/",
+        --products = {
+
+        --}
+    --},
+
 }
