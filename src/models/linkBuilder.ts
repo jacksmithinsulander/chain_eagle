@@ -3,7 +3,7 @@ import { urlData, UrlData } from '../data/urlData.js';
 /**
  * Represents a LinkBuilder class for building links from URL data.
  */
-class LinkBuilder {
+export class LinkBuilder {
   private data: UrlData;
   private links: string[] = [];
 
