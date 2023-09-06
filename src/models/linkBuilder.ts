@@ -5,7 +5,7 @@ import { UrlData } from '../data/urlData.js';
  */
 export class LinkBuilder {
   private data: UrlData;
-  private links: string[] = [];
+  private links: { [key: string]: string[] } = {}; // Change the links to an object
 
   /**
    * Creates an instance of LinkBuilder.
@@ -16,25 +16,29 @@ export class LinkBuilder {
   }
 
   /**
-   * Builds an array of links based on the provided URL data.
-   * @returns {string[]} An array of generated links.
+   * Builds an object of arrays of links based on the provided URL data.
+   * @returns {Object} An object of generated links, named after the asset titles.
    */
-  buildLinks(): string[] {
+  buildLinks(): { [key: string]: string[] } {
     for (const category in this.data) {
       if (this.data.hasOwnProperty(category)) {
         const categoryData = this.data[category];
-        const baseUrl: string = categoryData.base_url;
         const assets: { [assetType: string]: string[] } = categoryData.assets;
-        const urlEnding: string = categoryData.url_ending || '';
 
         for (const assetType in assets) {
           if (assets.hasOwnProperty(assetType)) {
             const assetList: string[] = assets[assetType];
 
+            if (!this.links[assetType]) {
+              this.links[assetType] = []; // Create an array for the asset type if it doesn't exist
+            }
+
             for (const asset of assetList) {
+              const baseUrl: string = categoryData.base_url;
+              const urlEnding: string = categoryData.url_ending || '';
               const fullUrl: string = baseUrl + asset + urlEnding;
-              //this.links.push(`${asset}: ${fullUrl}`);
-              this.links.push(fullUrl);
+
+              this.links[assetType].push(fullUrl);
             }
           }
         }
