@@ -11,7 +11,6 @@ export class LinkBuilder {
    * Creates an instance of LinkBuilder.
    * @param {UrlData} data - The URL data to build links from.
    */
-
   constructor(data: UrlData) {
     this.data = data;
   }
@@ -20,7 +19,6 @@ export class LinkBuilder {
    * Builds an array of links based on the provided URL data.
    * @returns {string[]} An array of generated links.
    */
-
   buildLinks(): string[] {
     for (const category in this.data) {
       if (this.data.hasOwnProperty(category)) {
