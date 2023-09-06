@@ -51,7 +51,7 @@ export class HttpMultiRequest {
       const response: AxiosResponse = responses[i];
 
       if (response.status === 200) {
-        const parsedData: any = this.parseResponse(response.data);
+        const parsedData: any = this.parseResponse(response.data, url);
         console.log(`Data from ${category} - ${url}:`, parsedData);
       } else {
         console.error(`Error while fetching data from ${category} - ${url}`);
@@ -64,7 +64,32 @@ export class HttpMultiRequest {
    * @param {any} data - The response data to be parsed.
    * @returns {any} The parsed data.
    */
-  private parseResponse(data: any): any {
-    return data;
+  private parseResponse(data: any, url: string): any {
+    if (url.includes('yahoo')) {
+      try {
+        const jsonData = data.chart?.result?.[0];
+  
+        if (jsonData) {
+          const adjcloseValue = jsonData.indicators?.adjclose?.[0]?.adjclose?.[0];
+  
+          if (adjcloseValue !== undefined) {
+            return adjcloseValue;
+          }
+        }
+  
+        const chartPreviousClose = jsonData?.meta?.chartPreviousClose;
+        
+        if (chartPreviousClose !== undefined) {
+          return chartPreviousClose;
+        } else {
+          throw new Error(`Unable to extract adjclose or chartPreviousClose value from JSON response for URL: ${url}`);
+        }
+      } catch (error) {
+        console.error('Error parsing JSON response:', error);
+        throw new Error(`Error parsing JSON response for URL: ${url}`);
+      }
+    } else {
+      return data;
+    }
   }
 }

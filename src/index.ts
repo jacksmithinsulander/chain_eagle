@@ -5,7 +5,7 @@ import { urlData } from './data/urlData.js';
 const linkBuilder: LinkBuilder = new LinkBuilder(urlData);
 const links = linkBuilder.buildLinks();
 console.log(links)
-const httpMultiRequest: HttpMultiRequest =  new HttpMultiRequest(links, ['pokemons']);
+const httpMultiRequest: HttpMultiRequest =  new HttpMultiRequest(links, ['stocks']);
 
 httpMultiRequest.sendRequests()
   .then(() => {
