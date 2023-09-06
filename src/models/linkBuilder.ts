@@ -5,7 +5,7 @@ import { UrlData } from '../data/urlData.js';
  */
 export class LinkBuilder {
   private data: UrlData;
-  private links: { [key: string]: string[] } = {}; // Change the links to an object
+  private links: { [key: string]: string[] } = {};
 
   /**
    * Creates an instance of LinkBuilder.
@@ -30,7 +30,7 @@ export class LinkBuilder {
             const assetList: string[] = assets[assetType];
 
             if (!this.links[assetType]) {
-              this.links[assetType] = []; // Create an array for the asset type if it doesn't exist
+              this.links[assetType] = []; 
             }
 
             for (const asset of assetList) {
