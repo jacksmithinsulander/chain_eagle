@@ -1,5 +1,4 @@
-import { urlData, UrlData } from './urlData.js';
-
+import { urlData, UrlData } from '../data/urlData.js';
 
 /**
  * Represents a LinkBuilder class for building links from URL data.
