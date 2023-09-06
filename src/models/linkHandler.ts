@@ -45,8 +45,3 @@ export class HttpMultiRequest {
     return data;
   }
 }
-
-const urlsToFetch: string[] = ['https://api.example.com/data1', 'https://api.example.com/data2'];
-const httpMultiRequest: HttpMultiRequest = new HttpMultiRequest(urlsToFetch);
-
-httpMultiRequest.sendRequests();

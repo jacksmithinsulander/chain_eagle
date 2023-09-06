@@ -1,4 +1,4 @@
-import { urlData, UrlData } from '../data/urlData.js';
+import { UrlData } from '../data/urlData.js';
 
 /**
  * Represents a LinkBuilder class for building links from URL data.
@@ -44,7 +44,3 @@ export class LinkBuilder {
     return this.links;
   }
 }
-
-const linkBuilder = new LinkBuilder(urlData);
-const links = linkBuilder.buildLinks();
-console.log(links);
