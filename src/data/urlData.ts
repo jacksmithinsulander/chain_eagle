@@ -67,10 +67,18 @@ export const urlData: UrlData = {
       ],
     },
   },
-  // stockx: {
-  //   base_url: "https://api.stockx.com/v2/catalog/products/",
-  //   products: {
-  //     // Add your products here if needed
-  //   },
-  // },
+  stockx: {
+    base_url: "https://api.stockx.com/v2/catalog/products/",
+    assets: {
+      sneakers: [
+        "nike-dunk-low-retro-white-black-2021",
+        "nike-air-force-1-low-white-07",
+        "adidas-yeezy-slide-bone-2022",
+        "adidas-yeezy-slide-black-onyx",
+        "yeezy-slide-desert-sand",
+        "air-jordan-1-retro-high-og-chicago-reimagined-lost-and-found",
+        "nike-dunk-low-grey-fog"
+      ],
+    },
+  },
 };
